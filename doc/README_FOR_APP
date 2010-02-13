@@ -1,2 +1,33 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+VDW Portal Application Prototype
+This application can (or will) keep track of:
+
+  Dataset Specifications
+    Name
+    Description
+    Variables (models in their own right)
+    Implementing Sites
+    Site implementation details (extent in time; frequency of update)
+    Associated Standard Macros
+    Past Programs
+    
+  Sites
+    name
+    city
+    abbreviation
+    code (2-digit number assigned to each site)
+    datasets implemented (if any)
+
+  Programs
+    Datasets used
+    Associated Project?
+    Author
+    
+  Bugs/Caveats
+    Against specs or variables
+    Against a particular Site's implementation of the spec
+    
+  Enhancement Requests
+    New variables
+    New datasets
+    
+  
