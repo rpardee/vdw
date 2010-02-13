@@ -1,0 +1,32 @@
+<h1>Listing datasets</h1>
+
+<table>
+  <tr>
+
+    <th>Name</th>
+
+    <th>Description</th>
+
+    <th>Version</th>
+
+  </tr>
+
+<% @datasets.each do |dataset| %>
+  <tr>
+
+    <td><%=h dataset.name %></td>
+
+    <td><%=h dataset.description %></td>
+
+    <td><%=h dataset.version %></td>
+
+    <td><%= link_to 'Show', dataset %></td>
+    <td><%= link_to 'Edit', edit_dataset_path(dataset) %></td>
+    <td><%= link_to 'Destroy', dataset, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New dataset', new_dataset_path %>
