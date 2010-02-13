@@ -1,1 +1,4 @@
-pdf.text "Boobies! "  * 20
+@datasets.each do |d|
+  pdf.text d.name
+  pdf.text d.description
+end
