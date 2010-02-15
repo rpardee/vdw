@@ -8,14 +8,18 @@ class DatasetVariable < ActiveRecord::Base
   def var_attributes=(atts)
     # raise("boobies!")
     # raise(atts[:name])
-    var = Variable.find_by_name(atts[:name]) 
+    
+    var = Variable.find(atts[:id]) unless atts[:id].blank?
+    var ||= Variable.find_by_name(atts[:name])
+
     if var.nil? then
       logger.info("Could not find a variable called #{atts[:name]}--creating a new one.")
       var = Variable.new(atts)
       var.save
       logger.info("Variable created & saved: #{var.inspect}")
     else
-      logger.info("Found var #{var.name} (id = #{var.id}).")
+      logger.info("Found var #{var.name} (id = #{var.id})--updating.")
+      var.update_attributes(atts)
     end
     self.variable = var
   end

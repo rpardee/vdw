@@ -1,0 +1,237 @@
+/* Global styles */
+
+body, p, h1, table, dt
+  { margin: 0; padding: 0; }
+
+body { 
+  background-color: #EFD679; 
+  color: black; 
+  background-image: url(/images/main_margin.gif) ;
+  background-position: left;
+  background-repeat: repeat-y;
+    
+}
+
+body, p, ol, ul {
+  font-family: tahoma, verdana, arial, helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+td, td a {
+  font-size: 1em ;
+  margin: 0 ;
+  padding: 0;
+}
+ul ul {
+  font-size: smaller ;
+  font-weight: normal ;
+ }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: .8em;
+}
+
+a { color: #000; 
+    text-decoration:none;
+    border:none ;
+}
+a:hover { color: #B1BFCD; background-color:#293746; }
+
+h1 {
+font: 150% sans-serif;
+color: #226 ;
+border-bottom: 3px dotted #77d ;
+}
+
+fieldset {
+  border: 2px solid #293746 ;
+  margin-left: 1em;
+  padding: .5em ;
+}
+
+fieldset p {
+  /* background: white; */
+  display: inline;
+}
+
+label {
+	display: block ;
+	font-weight: bold;
+}
+
+legend {
+  color:  white ;
+  font-weight:bold;
+  background-color: #293746 ;
+  padding: 3px;
+  margin-bottom: .5em;
+  margin-top: .5em;
+}
+
+/* Classes */
+.list-actions {
+font-size: small;
+background-color: #EFD679;
+}
+.line-even {
+background: #B1BFCD
+}
+.line-odd {
+background: #E8F2FF ;
+}
+
+.big-link {
+	display: block ;
+	text-decoration: none; 	
+}
+
+.field-label {
+  font-weight: bold ;
+}
+
+/* The error box */
+.fieldWithErrors {
+padding: 2px;
+background-color: red;
+display: table;
+}
+
+
+/* Specific, named elements */
+
+#project-description {
+  clear:left;
+}
+#project-description p {
+  padding:.25em;
+}
+#flash {
+  text-align: center ;
+  margin-top: 1em;
+  color:green;
+}
+
+#banner {
+  float:left;
+  background: #293746 ;
+  margin-bottom: 2px;
+  width: 100%;
+  height: 86px;
+}
+
+#banner img {
+  float:left ;
+  border: none;
+}
+
+#banner h1 {
+  color:white;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+  font: 200% "Tahoma", sans-serif;
+  /* margin-top: .8em ; */
+}
+
+#sidebar {
+color: #E8F2FF;
+background-color: #65727E ;
+background-image: url(/images/sidebar_border.gif) ;
+background-position: right;
+background-repeat: repeat-y;
+vertical-align: top ;
+padding-right: 1em;
+/* float:left; */
+/* width: 15%; */
+width: 171px;
+}
+
+#sidebar a {
+color: white ;
+font-size: large;
+display: block ;
+text-decoration:none;
+}
+
+#main {
+position:absolute ;
+top: 86px;
+margin-top: 0;
+padding-left: .5em;
+margin-left: 180px ;
+float: left; 
+width: 82%;
+}
+
+#notice {
+border: 2px solid red;
+padding: 1em;
+margin-bottom: 2em;
+background-color: #f0f0f0 ;
+font-weight: bold ;
+}
+
+#search-stuff {
+  margin-top: 1em;
+  margin-bottom: 0em ;
+}
+
+#newbies {
+  width: 30em ;
+  border: .22em solid #293746 ;
+  margin-top: 2em ;
+  margin-bottom: 2em ;
+  padding: .5em ;
+}
+
+#project-basic-info {
+  float:left ;
+}
+#project-important-dates {
+  float:left ;
+}
+
+#project-funding {
+  float: left;
+}
+
+#project-people {
+  float:left;
+}
+
+#project-research-areas {
+   float:left;
+}
+
+#columns {
+background: #65727E ;
+}
+
+#errorExplanation {
+width: 400px;
+border: 2px solid red;
+padding: 7px;
+padding-bottom: 12px;
+margin-bottom: 20px;
+background-color: #f0f0f0 ;
+}
+#errorExplanation h2 {
+text-align: left;
+font-weight: bold;
+padding: 5px 5px 5px 15px;
+font-size: 12px;
+margin: -7px;
+background-color: #c00 ;
+color: #fff ;
+}
+#errorExplanation p {
+color: #333 ;
+margin-bottom: 0;
+padding: 5px;
+}
+#errorExplanation ul li {
+font-size: 12px;
+list-style: square;
+}

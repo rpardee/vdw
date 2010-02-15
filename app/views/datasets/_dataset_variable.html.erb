@@ -1,0 +1,14 @@
+<tr>
+  <% dv = dataset_variable %>
+  <% dv.fields_for :var_attributes do |v| %>
+    <% var = dv.object.variable || Variable.new(:name => "var?") %>
+    <td>
+        <%= v.hidden_field :id, :value => var.id %>
+        <%= v.text_field :name, :value => var.name %>
+    </td>
+    <td><%= v.select :datatype, Variable.get_datatypes, {:prompt => 'choose', :selected => var.datatype } %></td>
+    <td><%= v.text_field :label, :value => var.label %></td>
+  <% end %>
+  <td><%= dv.text_field :position, :size => 3 %></td>
+  <td><%= dv.check_box(:_delete) %></td>
+</tr>

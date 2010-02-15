@@ -1,0 +1,31 @@
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, :size=> 60 %>
+  </p>
+  <p>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %>
+    <%= f.text_field :state, :size => 3 %>
+  </p>
+  <p>
+    <%= f.label :abbreviation %>
+    <%= f.text_field :abbreviation, :size => 5 %>
+  </p>
+  <p>
+    <%= f.label :standard_code %>
+    <%= f.text_field :standard_code, :size => 2 %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description, :cols => 60, :rows => 4 %>
+  </p>
+  <p>
+    <%= f.label :sas_version, "SAS Version" %>
+    <%= f.text_field :sas_version, :size => 3 %>
+  </p>
+
+</fieldset>

@@ -1,0 +1,38 @@
+<p>
+  <b>Name:</b>
+  <%=h @site.name %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @site.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @site.state %>
+</p>
+
+<p>
+  <b>Abbreviation:</b>
+  <%=h @site.abbreviation %>
+</p>
+
+<p>
+  <b>Standard code:</b>
+  <%=h @site.standard_code %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @site.description %>
+</p>
+
+<p>
+  <b>SAS version:</b>
+  <%=h @site.sas_version %>
+</p>
+
+
+<%= link_to 'Edit', edit_site_path(@site) %> |
+<%= link_to 'Back', sites_path %>

@@ -40,9 +40,7 @@ before_filter :require_user
   # GET /datasets/1/edit
   def edit
     @dataset = Dataset.find(params[:id])
-    2.times do
-      @dataset.dataset_variables << DatasetVariable.new
-    end
+    @dataset.dataset_variables.build
     # raise(@dataset.dataset_variables[0].variable_attributes.inspect)
   end
 

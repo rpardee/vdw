@@ -1,5 +1,3 @@
-<h1>Listing datasets</h1>
-
 <table>
   <tr>
 
@@ -12,15 +10,10 @@
   </tr>
 
 <% @datasets.each do |dataset| %>
-  <tr>
-
-    <td><%=h dataset.name %></td>
-
+  <tr class="<%= cycle('line-odd', 'line-even') %>">
+    <td><%=link_to dataset.name, dataset %></td>
     <td><%=h dataset.description %></td>
-
     <td><%=h dataset.version %></td>
-
-    <td><%= link_to 'Show', dataset %></td>
     <td><%= link_to 'Edit', edit_dataset_path(dataset) %></td>
     <td><%= link_to 'Destroy', dataset, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

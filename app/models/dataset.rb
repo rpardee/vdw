@@ -1,33 +1,17 @@
 class Dataset < ActiveRecord::Base
   has_many :dataset_variables, :order => "position"
-  has_many "variables", :through => :dataset_variables
+  has_many "variables", :through => :dataset_variables, :order => "position"
   validates_uniqueness_of :name
+
+  # TODO: Get out of the a_n_a_f stuff--go back to the original Ryan Bates complex forms approach.  It looks like there's no way to do the nice ajax add/new and delete things w/this approach.
   
-  accepts_nested_attributes_for :dataset_variables, :allow_destroy => true
-  # 
-  # # I'm using the older 'complex-forms' style here b/c I really want to create
-  # # both variables and dataset_variables here, as appropriate.
-  # 
-  # def xvariable_attributes
-  #   self.variables
-  # end
-  # 
-  # def xvariable_attributes=(atts)
-  #   atts.each do |va|
-  # 
-  #     var = Variable.find_by_name(va[:name])
-  # 
-  #     if var.nil? then
-  #       # Create a new var by this name.
-  #       var = Variable.create(va)
-  #       var.save!
-  #       self.variables << var
-  #     else
-  #       # Var exists--is it already associated w/this dset?
-  #     end
-  # 
-  # 
-  #   end
-  # end
+  accepts_nested_attributes_for :dataset_variables, :allow_destroy => true,
+    :reject_if => proc {|attrs| reject_variable(attrs)}
+
+  def self.reject_variable(var_atts)
+    # raise(var_atts.inspect)
+    # {"_delete"=>"0", "var_attributes"=>{"name"=>"var?", "id"=>"", "datatype"=>"", "label"=>""}, "position"=>""}
+    (var_atts["_delete"] == "1" || var_atts["var_attributes"]["name"] == "var?")
+  end
 
 end

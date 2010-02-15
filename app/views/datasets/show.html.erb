@@ -26,7 +26,7 @@
       <th>Label</th>
     </tr>
     <% @dataset.variables.each do |v| %>
-      <tr>
+      <tr class="<%= cycle('line-odd', 'line-even') %>">
         <td><%= h v.name %></td>
         <td><%= h v.datatype %></td>
         <td><%= h v.label %></td>

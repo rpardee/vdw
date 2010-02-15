@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  city: MyString
+  state: MyString
+  abbreviation: MyString
+  standard_code: MyString
+  description: MyText
+  sas_version: MyString
+
+two:
+  name: MyString
+  city: MyString
+  state: MyString
+  abbreviation: MyString
+  standard_code: MyString
+  description: MyText
+  sas_version: MyString

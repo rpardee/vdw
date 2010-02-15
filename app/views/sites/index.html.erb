@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Abbreviation</th>
+    <th>Standard code</th>
+  </tr>
+
+<% @sites.each do |site| %>
+  <tr class="<%= cycle('line-odd', 'line-even') %>">
+    <td><%=link_to site.name, site %></td>
+    <td><%=h site.city %></td>
+    <td><%=h site.state %></td>
+    <td><%=h site.abbreviation %></td>
+    <td><%=h site.standard_code %></td>
+    <td><%= link_to 'Edit', edit_site_path(site) %></td>
+    <td><%= link_to 'Destroy', site, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New site', new_site_path %>
