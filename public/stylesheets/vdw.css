@@ -71,6 +71,11 @@ legend {
 }
 
 /* Classes */
+.login-stuff {
+  font-size: small;
+  display: inline;
+}
+
 .list-actions {
 font-size: small;
 background-color: #EFD679;

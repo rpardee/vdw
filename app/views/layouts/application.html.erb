@@ -14,14 +14,16 @@
     <h1>Virtual Data Warehouse</h1>
   </div>
   <div id = "sidebar">
-    <%= pluralize User.logged_in.count, "user" %> currently logged in
-    <% if !current_user %>
-      <%= link_to "Register", new_account_path %> |
-      <%= link_to "Log In", new_user_session_path %> |
-    <% else %>
-      <%= link_to "My Account", account_path %> |
-      <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
-    <% end %>
+    <div class = "login-stuff">
+      <p><%= pluralize User.logged_in.count, "user" %> currently logged in</p>
+      <% if !current_user %>
+        <%= link_to "Register", new_account_path %> |
+        <%= link_to "Log In", new_user_session_path %> |
+      <% else %>
+        <%= link_to "My Account", account_path, :style => 'font-size:small;display:inline;' %> |
+        <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?", :style => 'font-size:small;display:inline;' %>
+      <% end %>
+    </div>
     <h3>Browse By</h3>
     <ul>
       <li><%= link_to "Overview", :controller => "data_overview" %> </li>
