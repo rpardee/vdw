@@ -27,7 +27,10 @@ before_filter :require_user
   # GET /datasets/new.xml
   def new
     @dataset = Dataset.new
-
+    3.times do
+      @dataset.dataset_variables << DatasetVariable.new
+    end
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @dataset }
@@ -37,6 +40,10 @@ before_filter :require_user
   # GET /datasets/1/edit
   def edit
     @dataset = Dataset.find(params[:id])
+    2.times do
+      @dataset.dataset_variables << DatasetVariable.new
+    end
+    # raise(@dataset.dataset_variables[0].variable_attributes.inspect)
   end
 
   # POST /datasets
@@ -59,8 +66,9 @@ before_filter :require_user
   # PUT /datasets/1
   # PUT /datasets/1.xml
   def update
+    # raise("boobies!")
     @dataset = Dataset.find(params[:id])
-
+    # raise(params[:dataset][:dataset_variables_attributes]["0"].class.to_s)
     respond_to do |format|
       if @dataset.update_attributes(params[:dataset])
         flash[:notice] = 'Dataset was successfully updated.'

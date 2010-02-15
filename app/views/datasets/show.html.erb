@@ -1,4 +1,3 @@
-
 <p>
   <b>Name:</b>
   <%=h @dataset.name %>
@@ -16,6 +15,27 @@
   <%=h @dataset.version %>
 </p>
 
+<% if @dataset.variables.length > 0 then %>
+
+<fieldset> 
+  <legend>Variables</legend>
+   <table>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Label</th>
+    </tr>
+    <% @dataset.variables.each do |v| %>
+      <tr>
+        <td><%= h v.name %></td>
+        <td><%= h v.datatype %></td>
+        <td><%= h v.label %></td>
+      </tr>
+    <% end %>
+  </table>  
+</fieldset>
+
+<% end %>
 
 
 <%= link_to 'Edit', edit_dataset_path(@dataset) %> |
