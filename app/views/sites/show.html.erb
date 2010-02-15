@@ -38,7 +38,7 @@
         <th>User Notes</th>
       </tr>
       <tr class="<%= cycle('line-odd', 'line-even') %>">
-        <td><%= link_to di.dataset.name, di.dataset, :title => di.dataset.description %></td>
+        <td><%= link_to di.dataset.name, di, :title => "Click for implementation details." %></td>
         <td><%= h di.start_date.to_s(:month_and_year) %></td>
         <td><%= h di.end_date.to_s(:month_and_year) %></td>
         <td><%= h di.update_frequency %></td>

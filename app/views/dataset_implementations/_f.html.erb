@@ -1,0 +1,34 @@
+  <%= f.error_messages %>
+
+<fieldset>
+  <legend><%= h legend %></legend>
+
+  <p>
+    <%= f.label :site_id %>
+    <%= f.collection_select :site_id, Site.find(:all), :id, :name %>
+  </p>
+  <p>
+    <%= f.label :dataset_id %>
+    <%= f.collection_select :dataset_id, Dataset.find(:all), :id, :name %>
+  </p>
+  <p>
+    <%= f.label :start_date %>
+    <%= f.date_select :start_date, :discard_day => true, :order => [:month, :year] %>
+  </p>
+  <p>
+    <%= f.label :end_date %>
+    <%= f.date_select :end_date, :discard_day => true, :order => [:month, :year] %>
+  </p>
+  <p>
+    <%= f.label :update_frequency %>
+    <%= f.select :update_frequency, DatasetImplementation.get_update_frequencies, {:prompt => 'select'} %>
+  </p>
+  <p>
+    <%= f.label :indigenous_data %>
+    <%= f.text_area :indigenous_data, :rows => 5, :cols => 70 %>
+  </p>
+  <p>
+    <%= f.label :user_notes %>
+    <%= f.text_area :user_notes, :rows => 5, :cols => 70 %>
+  </p>
+</fieldset>
