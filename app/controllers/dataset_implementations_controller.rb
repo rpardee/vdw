@@ -1,4 +1,6 @@
 class DatasetImplementationsController < ApplicationController
+  before_filter :require_user
+
   # GET /dataset_implementations
   # GET /dataset_implementations.xml
   def index
