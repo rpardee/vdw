@@ -10,7 +10,7 @@ class CreateDatasetImplementations < ActiveRecord::Migration
       t.text :user_notes
 
       t.timestamps
-    end
+   end
   end
 
   def self.down

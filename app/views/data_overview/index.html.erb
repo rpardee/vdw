@@ -1,4 +1,4 @@
-<table border="1">
+<table>
   <tr>
     <th>Datasets By Site</th>
     <% @sites.each do |s| %>
@@ -8,7 +8,7 @@
     <% end %>
   </tr>  
   <% @datasets.each do |d| %>
-    <tr>
+    <tr class="<%= cycle('line-odd', 'line-even') %>">
       <th><%= link_to d.name, d, {:title => d.description} %></th>
       <% @sites.each do |s| %>
         <td><%= cell_contents(d, s) %></td>
