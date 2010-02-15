@@ -13,7 +13,7 @@
   </p>
   <p>
     <%= f.label :start_date %>
-    <%= f.date_select :start_date, :discard_day => true, :order => [:month, :year] %>
+    <%= f.date_select :start_date, :discard_day => true, :order => [:month, :year], :start_year => 1960 %>
   </p>
   <p>
     <%= f.label :end_date %>
