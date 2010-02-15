@@ -1,0 +1,18 @@
+<table border="1">
+  <tr>
+    <th>Datasets By Site</th>
+    <% @sites.each do |s| %>
+      <th>
+        <%= link_to s.abbreviation, s, {:title => s.name} %>
+      </th>
+    <% end %>
+  </tr>  
+  <% @datasets.each do |d| %>
+    <tr>
+      <th><%= link_to d.name, d, {:title => d.description} %></th>
+      <% @sites.each do |s| %>
+        <td><%= cell_contents(d, s) %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

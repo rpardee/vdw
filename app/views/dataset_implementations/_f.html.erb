@@ -5,11 +5,11 @@
 
   <p>
     <%= f.label :site_id %>
-    <%= f.collection_select :site_id, Site.find(:all), :id, :name %>
+    <%= f.collection_select :site_id, Site.find(:all), :id, :name, {:prompt => true} %>
   </p>
   <p>
     <%= f.label :dataset_id %>
-    <%= f.collection_select :dataset_id, Dataset.find(:all), :id, :name %>
+    <%= f.collection_select :dataset_id, Dataset.find(:all), :id, :name, {:prompt => true} %>
   </p>
   <p>
     <%= f.label :start_date %>

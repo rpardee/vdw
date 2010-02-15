@@ -2,7 +2,6 @@ class Dataset < ActiveRecord::Base
   has_many :dataset_variables, :order => "position"
   has_many "variables", :through => :dataset_variables, :order => "position"
   has_many :dataset_implementations
-  has_many "implementations", :through => :dataset_implementations
   validates_uniqueness_of :name
 
   # TODO: Get out of the a_n_a_f stuff--go back to the original Ryan Bates complex forms approach.  It looks like there's no way to do the nice ajax add/new and delete things w/this approach.

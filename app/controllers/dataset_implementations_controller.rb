@@ -25,7 +25,8 @@ class DatasetImplementationsController < ApplicationController
   # GET /dataset_implementations/new.xml
   def new
     @dataset_implementation = DatasetImplementation.new
-
+    @dataset_implementation.site_id = params[:site_id] unless params[:site_id].blank?
+    @dataset_implementation.dataset_id = params[:dataset_id] unless params[:dataset_id].blank?
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @dataset_implementation }
