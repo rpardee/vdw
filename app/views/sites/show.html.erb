@@ -1,38 +1,52 @@
-<p>
-  <b>Name:</b>
-  <%=h @site.name %>
-</p>
+<fieldset>
+  <legend>Site Info</legend>
 
-<p>
-  <b>City:</b>
-  <%=h @site.city %>
-</p>
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><%=h @site.name %></td>
+    </tr>
+    <tr>
+      <td>Abbreviation:</td>
+      <td><%=h @site.abbreviation %></td>
+    </tr>
+    <tr>
+      <td>Location:</td>
+      <td><%=h @site.location %></td>
+    </tr>
+    <tr>
+      <td>Code:</td>
+      <td><%=h @site.standard_code%></td>
+    </tr>
+    <tr>
+      <td>SAS Version:</td>
+      <td><%=h @site.sas_version %></td>
+    </tr>
+  </table>
 
-<p>
-  <b>State:</b>
-  <%=h @site.state %>
-</p>
+</fieldset>
 
-<p>
-  <b>Abbreviation:</b>
-  <%=h @site.abbreviation %>
-</p>
-
-<p>
-  <b>Standard code:</b>
-  <%=h @site.standard_code %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%=h @site.description %>
-</p>
-
-<p>
-  <b>SAS version:</b>
-  <%=h @site.sas_version %>
-</p>
-
+<fieldset>
+  <legend>Datasets Implemented</legend>
+  <% @site.dataset_implementations.each do |di| %>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Data Start</th>
+        <th>Data End</th>
+        <th>Updated</th>
+        <th>User Notes</th>
+      </tr>
+      <tr class="<%= cycle('line-odd', 'line-even') %>">
+        <td><%= link_to di.dataset.name, di.dataset, :title => di.dataset.description %></td>
+        <td><%= h di.start_date.to_s(:month_and_year) %></td>
+        <td><%= h di.end_date.to_s(:month_and_year) %></td>
+        <td><%= h di.update_frequency %></td>
+        <td><%= h di.user_notes %></td>
+      </tr>
+    </table>
+  <% end %>
+</fieldset>
 
 <%= link_to 'Edit', edit_site_path(@site) %> |
 <%= link_to 'Back', sites_path %>
