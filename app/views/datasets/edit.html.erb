@@ -1,7 +1,5 @@
-<h1>Editing dataset</h1>
-
 <% form_for(@dataset) do |f| %>
-<%= render :partial => 'form', :locals => {:f => f} %>
+  <%= render :partial => 'form', :locals => {:f => f, :legend => "Editing Dataset"} %>
 
   <p>
     <%= f.submit 'Update' %>

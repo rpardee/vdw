@@ -1,8 +1,5 @@
 <% form_for(@site) do |f| %>
-<fieldset>
-  <legend>New Site</legend>
-  <%= render :partial => 'f', :object => f %>
-
+  <%= render :partial => 'f', :object => f, :locals => {:legend => "New Site"} %>
   <p>
     <%= f.submit 'Create' %>
   </p>

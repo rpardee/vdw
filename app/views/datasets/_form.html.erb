@@ -1,4 +1,6 @@
   <%= f.error_messages %>
+<fieldset>
+  <legend><%= legend %></legend>
 
   <p>
     <%= f.label :name %><br />
@@ -15,22 +17,24 @@
     <%= f.text_field :version %>
   </p>
 
-<h2>Variables</h2>
-<table id = "dataset_variables">
-  <tr>
-    <th>Name</th>
-    <th>Data Type</th>
-    <th>Label</th>
-    <th>Position</th>
-    <th>Delete?</th>
-  </tr>
-
-  <% f.fields_for :dataset_variables do |dv| %> 
-    <%# debug(dv) %>
-    <%= render :partial => 'dataset_variable', :object => dv %>
-  <% end %>
-</table>
-
+  <fieldset>
+    <legend>Variables</legend>
+    <table id = "dataset_variables">
+      <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Label</th>
+        <th>Position</th>
+        <th>Delete?</th>
+      </tr>
+    
+      <% f.fields_for :dataset_variables do |dv| %> 
+        <%# debug(dv) %>
+        <%= render :partial => 'dataset_variable', :object => dv %>
+      <% end %>
+    </table>
+  </fieldset>
+</fieldset>
 <%# link_to_function "New var" do |page|
     page.insert_html :bottom, :dataset_variables, :partial => 'dataset_variable', :object => DatasetVariable.new
   end

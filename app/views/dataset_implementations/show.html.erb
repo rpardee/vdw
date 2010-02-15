@@ -1,0 +1,38 @@
+<p>
+  <b>Site:</b>
+  <%=h @dataset_implementation.site_id %>
+</p>
+
+<p>
+  <b>Dataset:</b>
+  <%=h @dataset_implementation.dataset_id %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @dataset_implementation.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%=h @dataset_implementation.end_date %>
+</p>
+
+<p>
+  <b>Update frequency:</b>
+  <%=h @dataset_implementation.update_frequency %>
+</p>
+
+<p>
+  <b>Indigenous data:</b>
+  <%=h @dataset_implementation.indigenous_data %>
+</p>
+
+<p>
+  <b>User notes:</b>
+  <%=h @dataset_implementation.user_notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_dataset_implementation_path(@dataset_implementation) %> |
+<%= link_to 'Back', dataset_implementations_path %>

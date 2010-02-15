@@ -1,0 +1,32 @@
+<h1>Listing dataset_implementations</h1>
+
+<table>
+  <tr>
+    <th>Site</th>
+    <th>Dataset</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Update frequency</th>
+    <th>Indigenous data</th>
+    <th>User notes</th>
+  </tr>
+
+<% @dataset_implementations.each do |dataset_implementation| %>
+  <tr>
+    <td><%=h dataset_implementation.site_id %></td>
+    <td><%=h dataset_implementation.dataset_id %></td>
+    <td><%=h dataset_implementation.start_date %></td>
+    <td><%=h dataset_implementation.end_date %></td>
+    <td><%=h dataset_implementation.update_frequency %></td>
+    <td><%=h dataset_implementation.indigenous_data %></td>
+    <td><%=h dataset_implementation.user_notes %></td>
+    <td><%= link_to 'Show', dataset_implementation %></td>
+    <td><%= link_to 'Edit', edit_dataset_implementation_path(dataset_implementation) %></td>
+    <td><%= link_to 'Destroy', dataset_implementation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New dataset_implementation', new_dataset_implementation_path %>
