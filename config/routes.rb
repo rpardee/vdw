@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :dataset_implementations
 
+  map.resources :dataset_implementations
+
   map.resources :sites
 
   map.resources :datasets

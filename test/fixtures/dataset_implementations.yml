@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  site_id: 1
+  dataset_id: 1
+  start_date: 2010-02-15
+  end_date: 2010-02-15
+  update_frequency: MyString
+  indigenous_data: MyText
+  user_notes: MyText
+
+two:
+  site_id: 1
+  dataset_id: 1
+  start_date: 2010-02-15
+  end_date: 2010-02-15
+  update_frequency: MyString
+  indigenous_data: MyText
+  user_notes: MyText
