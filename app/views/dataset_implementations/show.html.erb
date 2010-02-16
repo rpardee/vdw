@@ -26,7 +26,56 @@
   </table>
 
 </fieldset>
-
+<fieldset>
+  <legend>Current Issues</legend>
+  <% issues = @dataset_implementation.open_issues %>
+  <% if issues.empty? then %>
+    <p>None right now!</p>
+  <% else %>
+    <table>
+      <tr>
+        <th>Issue</th>
+        <th>Submitted By</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+        <th>Date</th>
+      </tr>
+    <% issues.each do |issue| %>
+      <tr class="<%= cycle('line-odd', 'line-even') %>">
+        <td><%= link_to issue.title, issue %></td>
+        <td><%= h issue.submitter.login %></td>
+        <td><%= h issue.assigned_to.login if issue.assigned_to %></td>
+        <td><%= h issue.status.name %></td>
+        <td><%= h issue.status_date %></td>
+      </tr>
+    <% end %>
+    </table>
+  <% end %>
+</fieldset>
+<fieldset>
+  <legend>Caveats</legend>
+  <% caveats = @dataset_implementation.caveats %>
+  <% if caveats.empty? then %>
+    <p>None so far!</p>
+  <% else %>
+    <table>
+      <tr>
+        <th>Issue</th>
+        <th>Submitted By</th>
+        <th>Date</th>
+      </tr>
+    <% caveats.each do |issue| %>
+      <tr class="<%= cycle('line-odd', 'line-even') %>">
+        <td><%= link_to issue.title, issue %></td>
+        <td><%= h issue.submitter.login %></td>
+        <td><%= h issue.status_date %></td>
+      </tr>
+    <% end %>
+    </table>
+  <% end %>
+  
+  
+</fieldset>
 
 <%= link_to 'Edit', edit_dataset_implementation_path(@dataset_implementation) %> |
 <%= link_to 'Back', dataset_implementations_path %>

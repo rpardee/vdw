@@ -46,13 +46,17 @@
       <th>Starts</th>
       <th>Updated</th>
       <th>User Notes</th>
+      <th>Open Issues</th>
+      <th>Caveats</th>
     </tr>
     <% @dataset.dataset_implementations.each do |di| %>
       <tr class="<%= cycle('line-odd', 'line-even') %>">
-        <td> <%= link_to di.site.abbreviation, di, {:title => di.site.name} %></td>
+        <td> <%= link_to di.site.name, di, {:title => di.site.name} %></td>
         <td><%= h di.start_date.to_s(:month_and_year) %></td>
         <td><%= h di.update_frequency %></td>
         <td><%= h di.user_notes %></td>
+        <td><%= link_to di.open_issues.length, di %></td>
+        <td><%= link_to di.caveats.length, di %></td>
       </tr>
     <% end %>
   </table>
