@@ -1,0 +1,28 @@
+<p>
+  <b>Dataset implementation:</b>
+  <%=h @dataset_implementation_issue.dataset_implementation_id %>
+</p>
+
+<p>
+  <b>Submitter:</b>
+  <%=h @dataset_implementation_issue.submitter %>
+</p>
+
+<p>
+  <b>Narrative:</b>
+  <%=h @dataset_implementation_issue.narrative %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @dataset_implementation_issue.status_id %>
+</p>
+
+<p>
+  <b>Status date:</b>
+  <%=h @dataset_implementation_issue.status_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_dataset_implementation_issue_path(@dataset_implementation_issue) %> |
+<%= link_to 'Back', dataset_implementation_issues_path %>

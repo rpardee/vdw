@@ -10,7 +10,7 @@
 
 <% @dataset_implementations.each do |dataset_implementation| %>
   <tr class="<%= cycle('line-odd', 'line-even') %>">
-    <td><%=link_to dataset_implementation.site.abbreviation, dataset_implementation.site %></td>
+    <td><%=link_to dataset_implementation.site.name, dataset_implementation.site %></td>
     <td><%=link_to dataset_implementation.dataset.name, dataset_implementation.dataset %></td>
     <td><%=h dataset_implementation.start_date.to_s(:month_and_year) %></td>
     <td><%=h dataset_implementation.end_date.to_s(:month_and_year) %></td>

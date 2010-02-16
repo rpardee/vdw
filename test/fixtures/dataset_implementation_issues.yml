@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  dataset_implementation_id: 1
+  submitter: MyString
+  narrative: MyText
+  status_id: 1
+  status_date: 2010-02-15
+
+two:
+  dataset_implementation_id: 1
+  submitter: MyString
+  narrative: MyText
+  status_id: 1
+  status_date: 2010-02-15

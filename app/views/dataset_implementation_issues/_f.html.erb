@@ -1,0 +1,32 @@
+  <%= f.error_messages %>
+
+<%# debug(current_user) %>
+
+<fieldset>
+  <legend><%= legend %></legend>
+  <p>
+    <%= f.label :dataset_implementation_id %>
+    <%= f.collection_select(:dataset_implementation_id, DatasetImplementation.get_list, :id, :name) %>
+  </p>
+  <p>
+    <%= f.label :submitter %>
+    <%= f.collection_select(:submitting_user_id, User.get_list, :id, :login) %>
+  </p>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+  <p>
+    <%= f.label :narrative %>
+    <%= f.text_area :narrative, :cols => 70, :rows => 10 %>
+  </p>
+  <p>
+    <%= f.label :status_id %>
+    <%= f.collection_select(:status_id, Status.find(:all), :id, :name) %>
+  </p>
+  <p>
+    <%= f.label :status_date %>
+    <%= f.date_select :status_date %>
+  </p>
+</fieldset>

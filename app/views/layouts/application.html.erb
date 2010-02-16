@@ -27,8 +27,10 @@
     <h3>Browse By</h3>
     <ul>
       <li><%= link_to "Overview", :controller => "data_overview" %> </li>
-      <li><%= link_to "Datasets", datasets_path %> </li>
       <li><%= link_to "Sites", sites_path %> </li>
+      <li><%= link_to "Datasets", datasets_path %> </li>
+      <li><%= link_to "Implementations", dataset_implementations_path %> </li>
+      <li><%= link_to "Issues", dataset_implementation_issues_path %> </li>
     </ul>
   </div>
   <div id = "main">

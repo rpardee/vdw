@@ -1,0 +1,10 @@
+<% form_for(@dataset_implementation_issue) do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => 'f', :object => f, :locals => {:legend => "Create Dataset Implementation Issue"} %>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', dataset_implementation_issues_path %>
