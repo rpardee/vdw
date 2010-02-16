@@ -1,7 +1,8 @@
-<h1>Register</h1>
-
+<fieldset>
+  <legend>Register A New Account</legend>
 <% form_for @user, :url => account_path do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :object => f %>
   <%= f.submit "Register" %>
 <% end %>
+</fieldset>
