@@ -6,7 +6,7 @@ body, p, h1, table, dt
 body { 
   background-color: #EFD679; 
   color: black; 
-  background-image: url(/images/main_margin.gif) ;
+  /* background-image: url(/images/main_margin.gif) ; */
   background-position: left;
   background-repeat: repeat-y;
     

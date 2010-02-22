@@ -1,5 +1,6 @@
-<h2>Site By Dataset Overview</h2>
 <table>
+  <thead>
+  <caption>Site By Dataset Overview</caption>
   <tr>
     <th>Datasets By Site</th>
     <% @implementing_sites.each do |s| %>
@@ -8,6 +9,9 @@
       </th>
     <% end %>
   </tr>  
+  </thead>
+  <tbody>
+    
   <% @datasets.each do |d| %>
     <tr class="<%= cycle('line-odd', 'line-even') %>">
       <th><%= link_to d.name, d, {:title => d.description} %></th>
@@ -16,20 +20,24 @@
       <% end %>
     </tr>
   <% end %>
+  </tbody>
 </table>
 <fieldset>
   <legend>Key</legend>
 <table>
   <tr>
     <th>Value</th>
-    <th>Meaning</th>
+    <th>Intended Meaning</th>
+    <th>Operationalized As</th>
   </tr>
-  <tr>
+  <tr class = 'line-odd'>
     <td class = 'green-cell'>Green Cell</td>
+    <td>No barriers to substantive research use.</td>
     <td>No outstanding issues.</td>
   </tr>
-  <tr>
+  <tr class = 'line-even'>
     <td class = 'yellow-cell'>Yellow Cell</td>
+    <td>Generally usable for substantive research, subject to caveats/issues listed</td>
     <td>One of:
       <ul>
         <li>1 or 2 outstanding issues, OR</li>
@@ -38,8 +46,9 @@
       </ul>
     </td>
   </tr>
-  <tr>
+  <tr class = 'line-odd'>
     <td class = 'red-cell'>Red Cell</td>
+    <td>Not safely useable for substantive research.</td>
     <td>
       One of:
       <ul>

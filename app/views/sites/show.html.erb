@@ -28,7 +28,6 @@
 
 <fieldset>
   <legend>Datasets Implemented</legend>
-  <% @site.dataset_implementations.each do |di| %>
     <table>
       <tr>
         <th>Name</th>
@@ -37,6 +36,7 @@
         <th>Updated</th>
         <th>User Notes</th>
       </tr>
+  <% @site.dataset_implementations.each do |di| %>
       <tr class="<%= cycle('line-odd', 'line-even') %>">
         <td><%= link_to di.dataset.name, di, :title => "Click for implementation details." %></td>
         <td><%= h di.start_date.to_s(:month_and_year) %></td>
