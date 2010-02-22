@@ -1,7 +1,8 @@
+<h2>Site By Dataset Overview</h2>
 <table>
   <tr>
     <th>Datasets By Site</th>
-    <% @sites.each do |s| %>
+    <% @implementing_sites.each do |s| %>
       <th>
         <%= link_to s.abbreviation, s, {:title => s.name} %>
       </th>
@@ -10,9 +11,49 @@
   <% @datasets.each do |d| %>
     <tr class="<%= cycle('line-odd', 'line-even') %>">
       <th><%= link_to d.name, d, {:title => d.description} %></th>
-      <% @sites.each do |s| %>
-        <td><%= cell_contents(d, s) %></td>
+      <% @implementing_sites.each do |s| %>
+        <%= cell_contents(d, s) %>
       <% end %>
     </tr>
   <% end %>
 </table>
+<fieldset>
+  <legend>Key</legend>
+<table>
+  <tr>
+    <th>Value</th>
+    <th>Meaning</th>
+  </tr>
+  <tr>
+    <td class = 'green-cell'>Green Cell</td>
+    <td>No outstanding issues.</td>
+  </tr>
+  <tr>
+    <td class = 'yellow-cell'>Yellow Cell</td>
+    <td>One of:
+      <ul>
+        <li>1 or 2 outstanding issues, OR</li>
+        <li>1 unassigned outstanding issue, OR</li>
+        <li>1 or 2 caveats of 'serious' severity or higher</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class = 'red-cell'>Red Cell</td>
+    <td>
+      One of:
+      <ul>
+        <li>3 or more outstanding issues, OR</li>
+        <li>3 or more caveats of 'serious' severity or higher</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+</fieldset>
+
+<h2>Sites With No Recorded Implementations thus far:</h2>
+<ul>
+  <% @non_implementing_sites.each do |s| %>
+    <li><%= link_to s.name, s %></li>
+  <% end %>
+</ul>

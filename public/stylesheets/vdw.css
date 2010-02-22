@@ -71,6 +71,24 @@ legend {
 }
 
 /* Classes */
+.green-cell {
+  background-color:green;
+  color:white;
+}
+.green-cell a { color:white ; display: block}
+
+.yellow-cell {
+  background-color:yellow;
+  color:black;
+}
+.yellow-cell a { color:black ; display: block}
+
+.red-cell {
+  background-color:red;
+  color:white;
+}
+.red-cell a { color:white ; display: block}
+
 .login-stuff {
   font-size: small;
   display: inline;
