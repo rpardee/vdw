@@ -72,7 +72,7 @@ legend {
 
 /* Classes */
 .green-cell {
-  background-color:#80FF80;
+  background-color:#060;
   color:white;
 }
 .green-cell a { color:white ; display: block}
@@ -84,7 +84,7 @@ legend {
 .yellow-cell a { color:black ; display: block}
 
 .red-cell {
-  background-color:#FFB3B3;
+  background-color:#C10000;
   color:white;
 }
 .red-cell a { color:white ; display: block}
