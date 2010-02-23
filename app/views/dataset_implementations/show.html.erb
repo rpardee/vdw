@@ -1,7 +1,7 @@
 <fieldset>
-  <legend><%= "Details of #{@dataset_implementation.site.name}'s Implementation of #{@dataset_implementation.dataset.name}." %></legend>
+  <legend><%= "#{@dataset_implementation.site.name}'s Implementation of #{@dataset_implementation.dataset.name}." %></legend>
 
-  <table grid="1">
+  <table>
     <tr>
       <th>Data Start</th>
       <th>Data End</th>
@@ -76,6 +76,9 @@
   
   
 </fieldset>
+
+<p>  <%= link_to "Report a new issue", {:controller => "dataset_implementation_issues", :action => "new", :diid => @dataset_implementation} %>
+</p>
 
 <%= link_to 'Edit', edit_dataset_implementation_path(@dataset_implementation) %> |
 <%= link_to 'Back', dataset_implementations_path %>

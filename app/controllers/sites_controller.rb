@@ -4,7 +4,7 @@ class SitesController < ApplicationController
   # GET /sites
   # GET /sites.xml
   def index
-    @sites = Site.all
+    @sites = Site.all(:order => "standard_code")
 
     respond_to do |format|
       format.html # index.html.erb

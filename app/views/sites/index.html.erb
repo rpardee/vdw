@@ -1,8 +1,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>City</th>
-    <th>State</th>
+    <th>Location</th>
     <th>Abbreviation</th>
     <th>Standard code</th>
   </tr>
@@ -10,8 +9,7 @@
 <% @sites.each do |site| %>
   <tr class="<%= cycle('line-odd', 'line-even') %>">
     <td><%=link_to site.name, site %></td>
-    <td><%=h site.city %></td>
-    <td><%=h site.state %></td>
+    <td><%=h site.location %></td>
     <td><%=h site.abbreviation %></td>
     <td><%=h site.standard_code %></td>
     <td><%= link_to 'Edit', edit_site_path(site) %></td>

@@ -26,6 +26,7 @@ class DatasetImplementationIssuesController < ApplicationController
   def new
     @dataset_implementation_issue = DatasetImplementationIssue.new
     @dataset_implementation_issue.submitting_user_id = current_user.id
+    @dataset_implementation_issue.dataset_implementation_id = params[:diid]
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @dataset_implementation_issue }
