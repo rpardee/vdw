@@ -1,8 +1,8 @@
-<table>
+<table id="overview">
   <thead>
   <caption>Site By Dataset Overview</caption>
   <tr>
-    <th>Datasets By Site</th>
+    <th></th>
     <% @implementing_sites.each do |s| %>
       <th>
         <%= link_to s.abbreviation, s, {:title => s.name} %>
@@ -13,7 +13,7 @@
   <tbody>
     
   <% @datasets.each do |d| %>
-    <tr class="<%= cycle('line-odd', 'line-even') %>">
+    <tr class="<%# cycle('line-odd', 'line-even') %>">
       <th><%= link_to d.name, d, {:title => d.description} %></th>
       <% @implementing_sites.each do |s| %>
         <%= cell_contents(d, s) %>
@@ -22,32 +22,16 @@
   <% end %>
   </tbody>
 </table>
-<fieldset>
-  <legend>Key</legend>
+
 <table>
+  <caption>Color Key</caption>
   <tr>
     <th>Value</th>
     <th>Intended Meaning</th>
     <th>Operationalized As</th>
   </tr>
-  <tr class = 'line-odd'>
-    <td class = 'green-cell'>Green Cell</td>
-    <td>No barriers to substantive research use.</td>
-    <td>No outstanding issues.</td>
-  </tr>
-  <tr class = 'line-even'>
-    <td class = 'yellow-cell'>Yellow Cell</td>
-    <td>Generally usable for substantive research, subject to caveats/issues listed</td>
-    <td>One of:
-      <ul>
-        <li>1 or 2 outstanding issues, OR</li>
-        <li>1 unassigned outstanding issue, OR</li>
-        <li>1 or 2 caveats of 'serious' severity or higher</li>
-      </ul>
-    </td>
-  </tr>
-  <tr class = 'line-odd'>
-    <td class = 'red-cell'>Red Cell</td>
+  <tr class = 'red-cell'>
+    <th>Red Cell</th>
     <td>Not safely useable for substantive research.</td>
     <td>
       One of:
@@ -58,8 +42,23 @@
       </ul>
     </td>
   </tr>
+  <tr class = 'yellow-cell'>
+    <th >Yellow Cell</th>
+    <td>Generally usable for substantive research, subject to caveats/issues listed</td>
+    <td>One of:
+      <ul>
+        <li>1 or 2 outstanding issues, OR</li>
+        <li>1 unassigned outstanding issue, OR</li>
+        <li>1 or 2 caveats of 'serious' severity or higher</li>
+      </ul>
+    </td>
+  </tr>
+  <tr class = 'green-cell'>
+    <th>Green Cell</th>
+    <td>No barriers to substantive research use.</td>
+    <td>No outstanding issues.</td>
+  </tr>
 </table>
-</fieldset>
 
 <h2>Sites With No Recorded Implementations thus far:</h2>
 <ul>

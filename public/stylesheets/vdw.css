@@ -34,7 +34,7 @@ pre {
 }
 
 a { color: #000; 
-    text-decoration:none;
+    /* text-decoration:none; */
     border:none ;
 }
 a:hover { color: #B1BFCD; background-color:#293746; }
@@ -44,7 +44,10 @@ font: 150% sans-serif;
 color: #226 ;
 border-bottom: 3px dotted #77d ;
 }
-
+caption {
+  font: 125% sans-serif;
+  padding: .25em;
+}
 fieldset {
   border: 2px solid #293746 ;
   margin-left: 1em;
@@ -71,23 +74,32 @@ legend {
 }
 
 /* Classes */
-.green-cell {
-  background-color:#060;
+
+/*
+  Strategy for cleaning up the traffic lighting:
+    give the overview table an id.
+    style "#id a" one time (color; display)
+    style '#id td' one time (color;)
+    just change background colors in 
+
+*/
+
+#overview a {
+  color:black;
+  display: block;
+}
+#overview a:hover {
   color:white;
 }
-.green-cell a { color:white ; display: block}
-
+.green-cell {
+  background-color:#80FF80;
+}
 .yellow-cell {
   background-color:#FFFF9F;
-  color:black;
 }
-.yellow-cell a { color:black ; display: block}
-
 .red-cell {
-  background-color:#C10000;
-  color:white;
+  background-color:#FF8080;
 }
-.red-cell a { color:white ; display: block}
 
 .login-stuff {
   font-size: small;
