@@ -173,7 +173,7 @@ display: table;
 #sidebar {
 color: #E8F2FF;
 background-color: #65727E ;
-background-image: url(/images/sidebar_border.gif) ;
+/* background-image: url(/images/sidebar_border.gif) ; */
 background-position: right;
 background-repeat: repeat-y;
 vertical-align: top ;
