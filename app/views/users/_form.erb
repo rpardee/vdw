@@ -7,13 +7,24 @@
     add_column :users, :degrees, :string
 
 -->
+<fieldset>
+	<legend>Account Info (Required)</legend>
+	<%= form.label :login, "E-Mail Address" %>
+	<%= form.text_field :login %>
+	
+	<%= form.label :password, form.object.new_record? ? nil : "Change password" %>
+	<%= form.password_field :password %>
+	
+	<%= form.label :password_confirmation %>
+	<%= form.password_field :password_confirmation %>
+</fieldset>
 
-
-<%= form.label :login, "User Name" %>
-<%= form.text_field :login %>
-
-<%= form.label :password, form.object.new_record? ? nil : "Change password" %>
-<%= form.password_field :password %>
-
-<%= form.label :password_confirmation %>
-<%= form.password_field :password_confirmation %>
+<fieldset>
+	<legend>Personal Info (Optional)</legend>
+	<%= form.label :first_name, "First Name" %><%= form.text_field :first_name %>
+	<%= form.label :last_name, "Last Name" %><%= form.text_field :last_name %>
+	<%= form.label :degrees, "Degrees" %><%= form.text_field :degrees %>
+	<%= form.label :time_zone, "Time Zone" %><%= form.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %>
+	<%= form.label :site %><%= form.collection_select(:site_id, Site.all, :id, :name,  :prompt => "Select a site")  %>
+	<%= form.label :role %><%= form.select(:role, User.get_roles, :prompt => "Select a role") %>
+</fieldset>

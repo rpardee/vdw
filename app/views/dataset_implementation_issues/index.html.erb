@@ -14,7 +14,7 @@
     <td><%=link_to dataset_implementation_issue.title, dataset_implementation_issue %></td>
     <td><%=h dataset_implementation_issue.submitter.login %></td>
     <td><%=h dataset_implementation_issue.assigned_to.login if dataset_implementation_issue.assigned_to %></td>
-    <td><%=h dataset_implementation_issue.status.name %></td>
+    <td><%=h dataset_implementation_issue.status.name if dataset_implementation_issue.status %></td>
     <td><%=h dataset_implementation_issue.status_date %></td>
     <td><%= link_to 'Edit', edit_dataset_implementation_issue_path(dataset_implementation_issue) %></td>
     <td><%= link_to 'Destroy', dataset_implementation_issue, :confirm => 'Are you sure?', :method => :delete %></td>

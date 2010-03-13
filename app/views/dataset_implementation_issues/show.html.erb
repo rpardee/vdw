@@ -14,7 +14,7 @@
 
 <p>
   <b>Status:</b>
-  <%=h @dataset_implementation_issue.status.name %>
+  <%=h @dataset_implementation_issue.status.name if @dataset_implementation_issue.status %>
 </p>
 
 <p>

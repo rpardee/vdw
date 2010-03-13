@@ -18,7 +18,9 @@ class ApplicationController < ActionController::Base
     end
     
     def require_user
-      unless current_user
+      if  current_user then
+         Time.zone = current_user.time_zone
+      else
         store_location
         flash[:notice] = "You must be logged in to access this page"
         redirect_to new_user_session_url

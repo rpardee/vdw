@@ -2,7 +2,7 @@
   <legend>Log In</legend>
 <% form_for @user_session, :url => user_session_path do |f| %>
   <%= f.error_messages %>
-  <%= f.label :login, "User Name" %>
+  <%= f.label :login, "E-Mail Address" %>
   <%= f.text_field :login %>
   
   <%= f.label :password %>

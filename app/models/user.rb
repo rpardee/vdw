@@ -6,6 +6,18 @@ class User < ActiveRecord::Base
     find(:all, :select => "id, login", :order => "login")
   end
   def self.get_roles
-    %w(Implementer Programmer/User Investigator Funder)
+    %w(Implementer/SDM Programmer/User Investigator Funder)
   end
+
+  def name
+    if self.last_name then
+      "#{first_name} #{last_name}"    
+    else
+      self.login
+    end
+  end
+  def full_name
+    "#{self.name}, #{self.degrees}"
+  end
+
 end

@@ -1,37 +1,28 @@
-<p>
-  <b>Login:</b>
-  <%=h @user.login %>
-</p>
+<fieldset>
+   <legend>User <%= @user.name %></legend>
+   
+   <fieldset>
+      <legend>Account Info</legend>
+      <label>E-Mail Address:</label><%=h @user.login %>
+   </fieldset>
+   
+   <fieldset>
+      <legend>Personal Info</legend>
+      <label>Full Name</label><%= @user.full_name %>
+      <label>Site</label><%= @user.site.name if @user.site %>
+      <label>Role</label><%= @user.role %>
+      <label>Time Zone:</label><%= @user.time_zone %>
+   </fieldset>
+   
+   <fieldset>
+      <legend>Site Usage</legend>
+      <label>No. times logged in:</label><%=h @user.login_count %>
+      <label>Last request at:</label><%=h @user.last_request_at %>
+      <label>Last login at:</label><%=h @user.last_login_at %>
+      <label>Current login at:</label><%=h @user.current_login_at %>
+      <label>Last login ip:</label><%=h @user.last_login_ip %>
+      <label>Current login ip:</label><%=h @user.current_login_ip %>
+   </fieldset>
 
-<p>
-  <b>Login count:</b>
-  <%=h @user.login_count %>
-</p>
-
-<p>
-  <b>Last request at:</b>
-  <%=h @user.last_request_at %>
-</p>
-
-<p>
-  <b>Last login at:</b>
-  <%=h @user.last_login_at %>
-</p>
-
-<p>
-  <b>Current login at:</b>
-  <%=h @user.current_login_at %>
-</p>
-
-<p>
-  <b>Last login ip:</b>
-  <%=h @user.last_login_ip %>
-</p>
-
-<p>
-  <b>Current login ip:</b>
-  <%=h @user.current_login_ip %>
-</p>
-
-
+</fieldset>
 <%= link_to 'Edit', edit_account_path %>
