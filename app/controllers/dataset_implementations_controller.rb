@@ -4,6 +4,7 @@ class DatasetImplementationsController < ApplicationController
   # GET /dataset_implementations
   # GET /dataset_implementations.xml
   def index
+     @page_title = "Implmentations of VDW Datasets"
     @dataset_implementations = DatasetImplementation.all(:order => "site_id, dataset_id")
 
     respond_to do |format|

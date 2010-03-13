@@ -2,6 +2,7 @@ class DatasetImplementationIssuesController < ApplicationController
   # GET /dataset_implementation_issues
   # GET /dataset_implementation_issues.xml
   def index
+     @page_title = "Issues with VDW Dataset Implementations"
     @dataset_implementation_issues = DatasetImplementationIssue.all
 
     respond_to do |format|

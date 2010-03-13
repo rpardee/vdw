@@ -4,6 +4,7 @@ class SitesController < ApplicationController
   # GET /sites
   # GET /sites.xml
   def index
+     @page_title = "Site List"
     @sites = Site.all(:order => "standard_code")
 
     respond_to do |format|

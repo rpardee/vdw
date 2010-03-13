@@ -3,6 +3,7 @@ before_filter :require_user
   # GET /datasets
   # GET /datasets.xml
   def index
+     @page_title = "VDW Datasets"
     @datasets = Dataset.all
 
     respond_to do |format|
