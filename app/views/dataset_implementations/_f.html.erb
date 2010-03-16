@@ -1,4 +1,4 @@
-  <%= f.error_messages %>
+<%= f.error_messages %>
 
 <fieldset>
   <legend><%= h legend %></legend>
@@ -25,7 +25,7 @@
   </p>
   <p>
     <%= f.label :indigenous_data %>
-    <%= f.text_area :indigenous_data, :rows => 5, :cols => 70 %>
+    <%= f.tinymce :indigenous_data, :rows => 5, :cols => 70 %>
   </p>
   <p>
     <%= f.label :user_notes %>
