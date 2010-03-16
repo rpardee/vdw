@@ -1,6 +1,20 @@
+<% content_for(:head) do %>
+  <%= javascript_include_tag "jquery-1.2.1.js" %>
+  <% scr = %{
+    $(function(){
+      $('#key').hide() ;
+      $('#showkey').click(function(event) {$('#key').toggle('normal') ; 
+      $('#showkey').text($('#showkey').text() == 'Show Key' ? 'Hide key' : 'Show Key') ;
+      return false ;} )
+  }
+    ) ;
+  } %>
+  <%= content_tag("script", scr) %>
+<% end %>
+
 <table id="overview">
   <thead>
-  <caption>VDW Status Dashboard</caption>
+  <caption>VDW Implementation Overview and Status</caption>
   <tr>
     <th></th>
     <% @implementing_sites.each do |s| %>
@@ -22,8 +36,8 @@
   <% end %>
   </tbody>
 </table>
-
-<table>
+<a id= "showkey" href = "#">Show Key</a>
+<table id = "key">
   <caption>Color Key</caption>
   <tr>
     <th>Value</th>
