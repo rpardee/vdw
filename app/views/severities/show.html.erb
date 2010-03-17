@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @severity.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @severity.description %>
+</p>
+
+<p>
+  <b>Sort order:</b>
+  <%=h @severity.sort_order %>
+</p>
+
+<p>
+  <b>Red limit:</b>
+  <%=h @severity.red_limit %>
+</p>
+
+<p>
+  <b>Yellow limit:</b>
+  <%=h @severity.yellow_limit %>
+</p>
+
+
+<%= link_to 'Edit', edit_severity_path(@severity) %> |
+<%= link_to 'Back', severities_path %>

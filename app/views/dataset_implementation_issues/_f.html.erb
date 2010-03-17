@@ -26,6 +26,10 @@
     <%= f.collection_select(:status_id, Status.find(:all), :id, :name) %>
   </p>
   <p>
+    <%= f.label :severity_id %>
+    <%= f.collection_select(:severity_id, Severity.find(:all, :order => "sort_order"), :id, :name) %>
+  </p>
+  <p>
     <%= f.label :status_date %>
     <%= f.date_select :status_date %>
   </p>

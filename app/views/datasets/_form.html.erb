@@ -9,13 +9,17 @@
 
   <p>
     <%= f.label :description %><br />
-    <%= f.text_area :description, :cols => 65, :rows => 4 %>
+    <%= f.tinymce :description, :cols => 65, :rows => 4 %>
   </p>
 
   <p>
     <%= f.label :version %><br />
     <%= f.text_field :version %>
   </p>
+  <%= f.label :standard_var, "Standard macro variable" %>
+  <%= f.text_field :standard_var %>
+</fieldset>
+  
 
   <fieldset>
     <legend>Variables</legend>

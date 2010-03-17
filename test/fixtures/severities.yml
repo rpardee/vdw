@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  sort_order: 1
+  red_limit: 1
+  yellow_limit: 1
+
+two:
+  name: MyString
+  description: MyString
+  sort_order: 1
+  red_limit: 1
+  yellow_limit: 1

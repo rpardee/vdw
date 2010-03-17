@@ -1,18 +1,15 @@
-<h1>Listing statuses</h1>
-
 <table>
   <tr>
     <th>Name</th>
     <th>Description</th>
-    <th>Sort order</th>
+    <th>No. Issues</th>
   </tr>
 
 <% @statuses.each do |status| %>
-  <tr>
-    <td><%=h status.name %></td>
+  <tr class = "<%= cycle('line-odd', 'line-even') %>">
+    <td><%= link_to status.name, status %></td>
     <td><%=h status.description %></td>
-    <td><%=h status.sort_order %></td>
-    <td><%= link_to 'Show', status %></td>
+    <td><%=h status.dataset_implementation_issues.count %></td>
     <td><%= link_to 'Edit', edit_status_path(status) %></td>
     <td><%= link_to 'Destroy', status, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

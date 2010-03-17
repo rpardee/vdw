@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :severities
+
 
   map.resources :dataset_implementation_issues
 

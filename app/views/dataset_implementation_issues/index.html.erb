@@ -1,7 +1,8 @@
 <table>
   <tr>
     <th>Dataset implementation</th>
-    <th>Title</th>
+    <th>Issue</th>
+    <th>Severity</th>
     <th>Submitted By</th>
     <th>Assigned To</th>
     <th>Status</th>
@@ -12,6 +13,7 @@
   <tr class="<%= cycle('line-odd', 'line-even') %>">
     <td><%=link_to dataset_implementation_issue.dataset_implementation.name, dataset_implementation_issue.dataset_implementation %></td>
     <td><%=link_to dataset_implementation_issue.title, dataset_implementation_issue %></td>
+    <td><%=h dataset_implementation_issue.severity.name if dataset_implementation_issue.severity %></td>
     <td><%=h dataset_implementation_issue.submitter.login %></td>
     <td><%=h dataset_implementation_issue.assigned_to.login if dataset_implementation_issue.assigned_to %></td>
     <td><%=h dataset_implementation_issue.status.name if dataset_implementation_issue.status %></td>

@@ -9,7 +9,6 @@
   <%= init_tinymce_hammer_if_required %>
   <%= yield :head %>
   <%# javascript_include_tag :defaults %>
-  
 </head>
 <body>
 <div id="layout">
@@ -35,6 +34,10 @@
       <li><%= link_to "Datasets", datasets_path %> </li>
       <li><%= link_to "Implementations", dataset_implementations_path %> </li>
       <li><%= link_to "Issues", dataset_implementation_issues_path %> </li>
+      <ul>
+        <li><%= link_to "Statuses", statuses_path %></li>
+        <li><%= link_to "Severities", severities_path %></li>
+      </ul>
     </ul>
   </div>
   <div id = "main">

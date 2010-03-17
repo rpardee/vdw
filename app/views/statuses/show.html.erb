@@ -1,4 +1,5 @@
 <p>
+  
   <b>Name:</b>
   <%=h @status.name %>
 </p>
@@ -13,6 +14,27 @@
   <%=h @status.sort_order %>
 </p>
 
+<fieldset>
+  <legend>Issues With This Status:</legend>
+  <% if @status.dataset_implementation_issues.count == 0 then %>
+    <p>None right now.</p>
+  <% else %>
+    <table>
+      <tr>
+        <th>Issue</th>
+        <th>Severity</th>
+        <th>Status Date</th>
+      </tr>
+      <% @status.dataset_implementation_issues.each do |dii| %>
+        <tr>
+          <td><%= link_to dii.title, dii %></td>
+          <td><%= dii.severity.name if dii.severity %></td>
+          <td><%= dii.status_date %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
 
+</fieldset>
 <%= link_to 'Edit', edit_status_path(@status) %> |
 <%= link_to 'Back', statuses_path %>
