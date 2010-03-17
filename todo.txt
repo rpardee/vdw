@@ -1,0 +1,11 @@
+TODO:
+   Datasets should have stdvar macro var names.
+   Sites should have isssues-report-to (user)
+
+   
+   Issues
+      should have severity
+      should have site response
+      fixable issues should have ETF
+      
+   Users
