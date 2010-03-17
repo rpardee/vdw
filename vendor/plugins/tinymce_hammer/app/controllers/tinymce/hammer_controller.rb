@@ -4,7 +4,7 @@ class Tinymce::HammerController < ActionController::Base
   OPTIONAL = false
   MARK_DONE = true
   
-  caches_page :combine
+  # caches_page :combine
   
   before_filter do |c|
     c.headers["Content-Type"] = "text/javascript; charset=utf-8"
