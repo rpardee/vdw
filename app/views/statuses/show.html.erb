@@ -22,12 +22,14 @@
     <table>
       <tr>
         <th>Issue</th>
+        <th>Site</th>
         <th>Severity</th>
         <th>Status Date</th>
       </tr>
       <% @status.dataset_implementation_issues.each do |dii| %>
-        <tr>
+        <tr class = "<%= cycle('line-odd', 'line-even') %>">
           <td><%= link_to dii.title, dii %></td>
+          <td><%= link_to dii.dataset_implementation.site.name, dii.dataset_implementation.site %></td>
           <td><%= dii.severity.name if dii.severity %></td>
           <td><%= dii.status_date %></td>
         </tr>

@@ -1,22 +1,15 @@
-<h1>Listing severities</h1>
-
 <table>
   <tr>
     <th>Name</th>
     <th>Description</th>
-    <th>Sort order</th>
-    <th>Red limit</th>
-    <th>Yellow limit</th>
+    <th>No. Issues</th>
   </tr>
 
 <% @severities.each do |severity| %>
-  <tr>
-    <td><%=h severity.name %></td>
+  <tr class = "<%= cycle('line-odd', 'line-even') %>">
+    <td><%=link_to severity.name        , severity %></td>
     <td><%=h severity.description %></td>
-    <td><%=h severity.sort_order %></td>
-    <td><%=h severity.red_limit %></td>
-    <td><%=h severity.yellow_limit %></td>
-    <td><%= link_to 'Show', severity %></td>
+    <td><%=h severity.dataset_implementation_issues.count %></td>
     <td><%= link_to 'Edit', edit_severity_path(severity) %></td>
     <td><%= link_to 'Destroy', severity, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

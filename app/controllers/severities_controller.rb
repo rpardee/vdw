@@ -2,7 +2,7 @@ class SeveritiesController < ApplicationController
   # GET /severities
   # GET /severities.xml
   def index
-    @severities = Severity.all
+    @severities = Severity.all(:order => "sort_order")
 
     respond_to do |format|
       format.html # index.html.erb

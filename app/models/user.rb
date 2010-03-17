@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   end
 
   def name
-    if self.last_name then
+    if self.last_name && self.last_name.length > 0 then
       "#{first_name} #{last_name}"    
     else
       self.login

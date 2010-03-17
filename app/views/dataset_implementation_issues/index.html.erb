@@ -3,21 +3,21 @@
     <th>Dataset implementation</th>
     <th>Issue</th>
     <th>Severity</th>
-    <th>Submitted By</th>
-    <th>Assigned To</th>
     <th>Status</th>
     <th>Status Date</th>
+    <th>Submitted By</th>
+    <th>Assigned To</th>
   </tr>
 
 <% @dataset_implementation_issues.each do |dataset_implementation_issue| %>
   <tr class="<%= cycle('line-odd', 'line-even') %>">
     <td><%=link_to dataset_implementation_issue.dataset_implementation.name, dataset_implementation_issue.dataset_implementation %></td>
     <td><%=link_to dataset_implementation_issue.title, dataset_implementation_issue %></td>
-    <td><%=h dataset_implementation_issue.severity.name if dataset_implementation_issue.severity %></td>
-    <td><%=h dataset_implementation_issue.submitter.login %></td>
-    <td><%=h dataset_implementation_issue.assigned_to.login if dataset_implementation_issue.assigned_to %></td>
-    <td><%=h dataset_implementation_issue.status.name if dataset_implementation_issue.status %></td>
+    <td><%= severity_link(dataset_implementation_issue.severity) %></td>
+    <td><%= status_link(dataset_implementation_issue.status) %></td>
     <td><%=h dataset_implementation_issue.status_date %></td>
+    <td><%=user_link(dataset_implementation_issue.submitter) %></td>
+    <td><%=h dataset_implementation_issue.assigned_to.login if dataset_implementation_issue.assigned_to %></td>
     <td><%= link_to 'Edit', edit_dataset_implementation_issue_path(dataset_implementation_issue) %></td>
     <td><%= link_to 'Destroy', dataset_implementation_issue, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
