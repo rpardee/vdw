@@ -1,0 +1,21 @@
+<fieldset>
+  <legend><%= legend %></legend>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :description %>
+    <%= f.text_field :description, :size => 110 %>
+    <%= f.label :sort_order %>
+    <%= f.text_field :sort_order, :size => 5 %>
+    <%= f.label :red_limit %>
+    <fieldset>
+      <legend>Overview Traffic Lighting</legend>
+
+      <p>How many open issues of this severity should an implementation have to have before it gets colored:</p>
+      <%= f.label :yellow_limit, "Yellow" %>
+      <%= f.text_field :yellow_limit, :size => 4 %>
+
+      <%= f.label :red_limit, "Red" %>
+      <%= f.text_field :red_limit, :size => 4 %>
+      <p> in the status overview?</p>
+    </fieldset>
+</fieldset>

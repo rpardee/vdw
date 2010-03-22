@@ -1,6 +1,13 @@
 TODO:
-   Datasets should have stdvar macro var names.
-   Sites should have isssues-report-to (user)
+  DONE: Datasets should have stdvar macro var names.
+  Sites should have isssues-report-to (user)
+
+  Users needs index view.
+  Create admin type role, members of which are empowered to:
+    edit users other than themselves
+    delete users (or just mark inactive?)
+  
+    Site staff should be able to assign priorities to fixable issues.
 
    
    Issues
@@ -9,3 +16,8 @@ TODO:
       fixable issues should have ETF
       
    Users
+
+Future:
+  Add the ability to track projects (merge with project tracker?)
+  Projects can have WorkRequests.  Upload/version sas code.
+    inject a 'web bug' into sas program to detect when it's been run?

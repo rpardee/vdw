@@ -38,6 +38,7 @@
         <th>Submitted By</th>
         <th>Assigned To</th>
         <th>Status</th>
+        <th>Severity</th>
         <th>Date</th>
       </tr>
     <% issues.each do |issue| %>
@@ -45,7 +46,8 @@
         <td><%= link_to issue.title, issue %></td>
         <td><%= h issue.submitter.login %></td>
         <td><%= h issue.assigned_to.login if issue.assigned_to %></td>
-        <td><%= h issue.status.name %></td>
+        <td><%= h issue.status.name if issue.status %></td>
+        <td><%= h issue.severity.name if issue.severity %></td>
         <td><%= h issue.status_date %></td>
       </tr>
     <% end %>

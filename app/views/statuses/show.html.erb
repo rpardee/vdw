@@ -1,5 +1,4 @@
 <p>
-  
   <b>Name:</b>
   <%=h @status.name %>
 </p>
@@ -13,6 +12,8 @@
   <b>Sort order:</b>
   <%=h @status.sort_order %>
 </p>
+
+<p>Issues with this status <%= @status.consider_open ? "ARE " : "are NOT " %>considered 'open' for traffic-lighting purposes.</p>
 
 <fieldset>
   <legend>Issues With This Status:</legend>

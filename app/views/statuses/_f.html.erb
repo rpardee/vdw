@@ -1,0 +1,11 @@
+<fieldset>
+  <legend><%= legend || "zah?" %></legend>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :sort_order %>
+  <%= f.text_field :sort_order %>
+  <%= f.label :consider_open, "An issue w/this status should be considered 'open' for overview-traffic-lighting purposes." %>
+  <%= f.check_box :consider_open %>
+</fieldset>

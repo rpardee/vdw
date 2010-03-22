@@ -1,31 +1,7 @@
-<h1>Editing severity</h1>
-
 <% form_for(@severity) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :sort_order %><br />
-    <%= f.text_field :sort_order %>
-  </p>
-  <p>
-    <%= f.label :red_limit %><br />
-    <%= f.text_field :red_limit %>
-  </p>
-  <p>
-    <%= f.label :yellow_limit %><br />
-    <%= f.text_field :yellow_limit %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <%= render :partial => 'f', :locals => {:f => f, :legend => "Editing Severity"}  %>
+  <%= f.submit 'Update' %>
 <% end %>
 
 <%= link_to 'Show', @severity %> |
