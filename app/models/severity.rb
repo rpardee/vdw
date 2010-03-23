@@ -20,15 +20,20 @@ class Severity < ActiveRecord::Base
       end
       ret << s + " open issues of '#{y.name}' severity, OR"
     end
-    ret[-1].gsub!(", OR", ".")
-    ret
+    eat_last_or(ret)
   end
   def self.red_rules
     ret = []
     self.find(:all, :conditions => ["red_limit > 0"], :order => "sort_order DESC").each do |r|
       ret << "#{r.red_limit} or more open issues of '#{r.name}' severity, OR"
     end
-    ret[-1].gsub!(", OR", ".")
-    ret
+    eat_last_or(ret)
   end
+
+  private
+  def self.eat_last_or(arr)
+    arr[-1].gsub!(", OR", ".") if arr[-1]
+    arr
+  end
+
 end
