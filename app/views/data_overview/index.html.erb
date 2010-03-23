@@ -37,6 +37,7 @@
   </tbody>
 </table>
 <a id= "showkey" href = "#">Show Key</a>
+
 <table id = "key">
   <caption>Color Key</caption>
   <tr>
@@ -50,9 +51,9 @@
     <td>
       One of:
       <ul>
-        <li>3 or more outstanding issues, OR</li>
-        <li>3 or more caveats of 'serious' severity or higher, OR</li>
-        <li>No implementation at all.</li>
+        <% Severity.red_rules.each do |r| %>
+          <%= content_tag('li', r) %>
+        <% end %>
       </ul>
     </td>
   </tr>
@@ -61,16 +62,16 @@
     <td>Generally usable for substantive research, subject to caveats/issues listed</td>
     <td>One of:
       <ul>
-        <li>1 or 2 outstanding issues, OR</li>
-        <li>1 unassigned outstanding issue, OR</li>
-        <li>1 or 2 caveats of 'serious' severity or higher</li>
+        <% Severity.yellow_rules.each do |y| %>
+          <%= content_tag('li', y) %>
+        <% end %>
       </ul>
     </td>
   </tr>
   <tr class = 'green-cell'>
     <th>Green Cell</th>
     <td>No barriers to substantive research use.</td>
-    <td>No outstanding issues.</td>
+    <td>No, or only minor outstanding issues.</td>
   </tr>
 </table>
 

@@ -26,7 +26,7 @@ class DatasetImplementation < ActiveRecord::Base
     # Nope--loop through the various non-green severities, counting open issues.
     Severity.find(:all, :conditions => ["red_limit > 0 or yellow_limit > 0"]).each do |sev|
       num_issues = issues.count(:all, :include => :status, :conditions => ["severity_id = ? AND statuses.consider_open = 't'", sev.id])
-      puts("Looking at #{sev.name} issues--this di has #{num_issues} of them.")
+      # puts("Looking at #{sev.name} issues--this di has #{num_issues} of them.")
       return 'red'    if (sev.red_limit > 0 && num_issues >= sev.red_limit)
       return 'yellow' if (sev.yellow_limit > 0 && num_issues >= sev.yellow_limit)
     end
